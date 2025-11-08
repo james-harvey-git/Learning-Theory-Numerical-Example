@@ -113,3 +113,14 @@ Checklist:
 - Fixed test grid and identical training data generation across runs.
 - Fully self-contained script using only open-source dependencies.
 
+---
+### Citation
+
+This experiment and accompanying analysis were prepared as part of the
+Fundamentals of AI CDT – Learning Theory Assessment (University of Oxford)
+based on the paper:
+
+Brown & Ali (2024). “Bias/Variance is not the same as Approximation/Estimation.”
+Journal of Machine Learning Research (JMLR).
+
+
