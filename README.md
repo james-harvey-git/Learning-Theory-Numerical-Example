@@ -20,11 +20,11 @@ y = x^3 + \epsilon, \quad \epsilon \sim \mathcal{N}(0, \sigma^2), \; \sigma = 0.
 \]
 $$
 
-For each ridge strength \( \lambda \), we:
-1. Generate 60 random training datasets (\(n = 20\) each).
-2. Train a polynomial ridge regressor of degree \(d \in \{1, 5\}\).
-3. Evaluate bias, variance, approximation, estimation, and optimisation error components on a large test set (\(n_{\text{test}} = 1000\)).
-4. Plot the resulting decompositions to visualise how each component evolves with λ.
+For each ridge strength $\( \lambda \)$, we:
+1. Generate 60 random training datasets ($\(n = 20\)$ each).
+2. Train a polynomial ridge regressor of degree $\(d \in \{1, 5\}\)$.
+3. Evaluate bias, variance, approximation, estimation, and optimisation error components on a large test set $(\(n_{\text{test}} = 1000\))$.
+4. Plot the resulting decompositions to visualise how each component evolves with $\lambda$.
 
 ---
 
@@ -34,13 +34,13 @@ The goal is to compare two related decompositions of model generalisation error:
 
 | Decomposition | Terms | Focus |
 |----------------|--------|--------|
-| **Bias / Variance** | \( \text{Risk} = \text{Bias} + \text{Variance} + \text{Noise} \) | Examines the *learner* (training procedure) |
-| **Approximation / Estimation / Optimisation** | \( \text{Excess Risk} = \text{Approx} + \text{Estimation} + \text{Optimisation} \) | Examines the *function class* |
+| **Bias / Variance** | $\( \text{Risk} = \text{Bias} + \text{Variance} + \text{Noise} \)$ | Examines the *learner* $(training procedure)$ |
+| **Approximation / Estimation / Optimisation** | $\( \text{Excess Risk} = \text{Approx} + \text{Estimation} + \text{Optimisation} \)$ | Examines the *function class* |
 
 In this experiment:
-- **Risk** is measured under MSE loss and kept fixed across λ.
+- **Risk** is measured under MSE loss and kept fixed across $\lambda$.
 - **Regularisation** (ridge penalty) changes only the *learning rule*, not the underlying function class.
-- **Approximation error** and estimation error therefore remains constant, while **bias**, **variance**, and **optimisation error** evolve with λ.
+- **Approximation error** and estimation error therefore remains constant, while **bias**, **variance**, and **optimisation error** evolve with $\lambda$.
 
 ---
 
@@ -51,9 +51,9 @@ All logic is contained in a single Python script (`ridge_bias_variance.py`).
 ### Main components:
 | Function | Description |
 |-----------|--------------|
-| `f0(x)` | True data-generating function \(x^3\). |
+| `f0(x)` | True data-generating function $\(x^3\)$. |
 | `fit_ridge_poly(deg, lam, x, y)` | Fits a polynomial ridge regression model of degree `deg` and regularisation strength `lam`. |
-| `risk_from_preds(preds)` | Estimates population (true) risk using a Monte Carlo approximation + σ² term. |
+| `risk_from_preds(preds)` | Estimates population (true) risk using a Monte Carlo approximation + $\sigma^2$ term. |
 | `best_in_class(deg)` | Approximates the best-in-class model (Bayes/OLS limit) using a large synthetic dataset. |
 
 ---
@@ -76,7 +76,7 @@ python ridge_bias_variance.py
 
 This will:
 - Train ridge models for polynomial degrees 1 and 5.
-- Sweep over λ values in [1e-4, 1e2].
+- Sweep over $\lambda$ values in [1e-4, 1e2].
 - Reproduce all figures used in the presentation slides.
 
 ### 3. Output
@@ -100,9 +100,9 @@ These correspond directly to the figures following the slide titled
 
 ## Interpretation highlights
 
-	- For small λ, ridge ≈ OLS → bias ≈ approximation, variance high, optimisation ≈ 0.
-	- As λ increases, estimation bias and optimisation error grow, variance decreases.
-	- The total excess risk forms the expected U-shape vs λ.
+	- For small $\lambda$, ridge ≈ OLS → bias ≈ approximation, variance high, optimisation ≈ 0.
+	- As $\lambda$ increases, estimation bias and optimisation error grow, variance decreases.
+	- The total excess risk forms the expected U-shape vs $\lambda$.
 	- A negative cross-procedure “optimisation error” indicates that ridge outperforms OLS in terms of population risk (better generalisation).
 
 ---
