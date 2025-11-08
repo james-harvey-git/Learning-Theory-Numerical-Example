@@ -82,16 +82,16 @@ This will:
 ### 3. Output
 
 The script will display the following plots for each degree:
-	1.	Bias vs Approximation Error
-	- Shows how regularisation introduces estimation bias.
-	2.	Variance vs Estimation Error
-	- Illustrates how variance decreases while estimation bias + optimisation error increase.
-	3.	Optimisation Error 
-	- Plots optimisation error to examine how it changes with regularisation.
-	4.	Bias, Variance, and Total Excess Risk
-	- Combines main terms on a single figure.
-	5.	Decomposition Consistency Check
-	- Verifies total_excess_risk ≈ approx + est_err + diff.
+1. Bias vs Approximation Error
+- Shows how regularisation introduces estimation bias.
+2. Variance vs Estimation Error
+- Illustrates how variance decreases while estimation bias + optimisation error increase.
+3. Optimisation Error 
+- Plots optimisation error to examine how it changes with regularisation.
+4. Bias, Variance, and Total Excess Risk
+- Combines main terms on a single figure.
+5. Decomposition Consistency Check
+- Verifies total_excess_risk ≈ approx + est_err + diff.
 
 These correspond directly to the figures following the slide titled
 “Numerical Example: Polynomial Ridge Regression.”
@@ -99,7 +99,7 @@ These correspond directly to the figures following the slide titled
 ---
 
 ## Interpretation highlights
-
+`
 	- For small $\lambda$, ridge ≈ OLS → bias ≈ approximation, variance high, optimisation ≈ 0.
 	- As $\lambda$ increases, estimation bias and optimisation error grow, variance decreases.
 	- The total excess risk forms the expected U-shape vs $\lambda$.
@@ -108,7 +108,7 @@ These correspond directly to the figures following the slide titled
 ---
 
 ## Reproducibility checklist
-
+`
 	- Deterministic random seed (rng = np.random.default_rng(7)).
 	- Fixed test grid and identical training data generation across runs.
 	- Fully self-contained script using only open-source dependencies.
