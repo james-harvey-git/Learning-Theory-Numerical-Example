@@ -14,9 +14,11 @@ The numerical experiment investigates how introducing a ridge regularisation ter
 
 We model a simple cubic data-generating process:
 
+$$
 \[
 y = x^3 + \epsilon, \quad \epsilon \sim \mathcal{N}(0, \sigma^2), \; \sigma = 0.3
 \]
+$$
 
 For each ridge strength \( \lambda \), we:
 1. Generate 60 random training datasets (\(n = 20\) each).
