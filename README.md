@@ -98,18 +98,18 @@ These correspond directly to the figures following the slide titled
 
 ---
 
-## Interpretation highlights
-`
-	- For small $\lambda$, ridge ≈ OLS → bias ≈ approximation, variance high, optimisation ≈ 0.
-	- As $\lambda$ increases, estimation bias and optimisation error grow, variance decreases.
-	- The total excess risk forms the expected U-shape vs $\lambda$.
-	- A negative cross-procedure “optimisation error” indicates that ridge outperforms OLS in terms of population risk (better generalisation).
+### Interpretation highlights
+Highlights:
+- For small $\lambda$, ridge ≈ OLS → bias ≈ approximation, variance high, optimisation ≈ 0.
+- As $\lambda$ increases, estimation bias and optimisation error grow, variance decreases.
+- The total excess risk forms the expected U-shape vs $\lambda$.
+- A negative cross-procedure “optimisation error” indicates that ridge outperforms OLS in terms of population risk (better generalisation).
 
 ---
 
 ## Reproducibility checklist
-`
-	- Deterministic random seed (rng = np.random.default_rng(7)).
-	- Fixed test grid and identical training data generation across runs.
-	- Fully self-contained script using only open-source dependencies.
+Checklist:
+- Deterministic random seed (rng = np.random.default_rng(7)).
+- Fixed test grid and identical training data generation across runs.
+- Fully self-contained script using only open-source dependencies.
 
